@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h2>{{calCurrentTimeStatus}}</h2>
+    <h1>{{calLoveDays}}</h1>
+    <el-button @click="toLogin">登陆</el-button>
   </div>
 </template>
 
@@ -13,11 +15,16 @@ export default {
     }
   },
   methods: {
-    
+    toLogin() {
+      this.$router.push('/login');
+    }
   },
   computed: {
     calCurrentTimeStatus() {
       return `${this.$store.getters.calCurrentTimeStatus}好`;
+    },
+    calLoveDays() {
+      return this.$store.getters.calLoveDays;
     }
   },
   mounted(){

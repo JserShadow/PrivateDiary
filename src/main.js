@@ -4,16 +4,19 @@ import Vue from 'vue'
 import Vuex from 'vuex';
 import App from './App'
 import HelloWorld from './components/HelloWorld.vue';
+import Login from './components/login.vue';
 import router from './router'
-import ElementUi from 'element-ui';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false
-Vue.use(ElementUi);
+Vue.use(ElementUI);
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    currentTimeStatus: ['早上','中午','下午','晚上']
+    currentTimeStatus: ['早上','中午','下午','晚上'],
+    loveDays: 0
   },
   getters: {
     calCurrentTimeStatus: state => {
@@ -27,6 +30,12 @@ const store = new Vuex.Store({
       } else {
         return state.currentTimeStatus[3];
       }
+    },
+    calLoveDays: state => {
+      const date = Date.parse(new Date());
+      const pastDate = Date.parse('2016.06.03');
+
+      return parseInt((date-pastDate)/(1000*60*60*24));
     }
   }
 })
@@ -36,6 +45,6 @@ new Vue({
   el: '#app',
   router,
   store,
-  components: { App, HelloWorld },
+  components: { App, HelloWorld, Login },
   template: '<App/>'
 })
