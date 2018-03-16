@@ -2,13 +2,14 @@
   <div class="hello">
     <h2>{{calCurrentTimeStatus}}</h2>
     <h1>{{calLoveDays}}</h1>
-    <el-button @click="toLogin">登陆</el-button>
+    
+    <el-button type="text" @click="toLogin">登录</el-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'FrontPage',
   data () {
     return {
       
