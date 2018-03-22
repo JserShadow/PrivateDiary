@@ -9,7 +9,7 @@
           <el-input v-model="password" placeholder="请输入密码"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="login" id="login-button">登录</el-button>
+          <el-button style="padding: 12px 105px;" type="primary" @click="login" id="login-button">登录</el-button>
         </el-form-item>
       </el-form>
       <div class="other-options">
@@ -52,9 +52,6 @@ export default {
 }
 .login-form {
   margin: 30px;
-}
-.login-button {
-  padding: 12px 105px;
 }
 .other-options {
   margin-top: 10px;
